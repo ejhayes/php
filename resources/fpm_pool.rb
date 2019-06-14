@@ -92,6 +92,7 @@ action_class do
   def register_fpm_service
     service node['php']['fpm_service'] do
       action :enable
+      provider Chef::Provider::Service::Init::Debian
     end
   end
 end
